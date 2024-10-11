@@ -1,0 +1,133 @@
+EXPLICAÇAO DO SCRIPT
+1. Configurações Gerais
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+--------------------------------------
+ Estilos do Corpo da Página
+
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+---------------------------------------
+3. Menu Lateral CSS
+
+nav {
+    background-color: #ffd1dc;
+    width: 200px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+background-color: #ffd1dc;: Define a cor de fundo do menu.
+width: 200px;: Define a largura do menu lateral.
+flex-direction: column;
+ Organiza os links verticalmente.
+
+nav a {
+    color: #fff;
+    background-color: #f4a7b9;
+    margin: 10px 0;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 8px;
+}
+Estiliza os links do menu, com cor de fundo e bordas arredondadas.
+
+nav a:hover {
+    background-color: #ef95a3;
+}
+hover: Muda a cor de fundo quando o link é apontado pelo mouse.
+-----------------------------------------------------------------------------------------------------
+
+Cabeçalho e Efeito de Balões
+
+header {
+    background-color: #ffb6c1;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    width: calc(100% - 200px);
+    left: 200px;
+    overflow: hidden;
+}
+Define o cabeçalho fixo no topo, com a largura descontada do menu lateral e cor de fundo.
+
+.balloons {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    z-index: -1;
+}
+.balloons
+
+ cria um espaço para os balões que ficarão por trás do texto.
+
+.balloon {
+    position: absolute;
+    width: 40px;
+    height: 60px;
+    background-color: #ffd1dc;
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+Cada .balloon representa um balão animado com diferentes cores e posições usando nth-child.
+
+@keyframes float {
+    0% { transform: translateY(100px) rotate(0deg); opacity: 1; }
+    50% { transform: translateY(-20px) rotate(10deg); opacity: 0.8; }
+    100% { transform: translateY(-150px) rotate(-10deg); opacity: 0; }
+}
+@keyframes float: Define a animação dos balões, movendo-os para cima e alternando a rotação.
+-----------------------------------------------
+
+ Seções Principais e Layout dos Produtos
+
+main {
+    padding: 80px 20px 20px 20px;
+    width: 100%;
+}
+-----------------------------------------------------------
+Configura o conteúdo principal com um espaçamento de topo para evitar sobreposição com o cabeçalho.
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 20px;
+}
+Usa grid para organizar os produtos em colunas que se ajustam automaticamente.
+.product-grid div {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+Estilo dos cartões de produtos, com bordas arredondadas e sombra.
+
+button {
+    padding: 10px;
+    background-color: #f4a7b9;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+Estilo para os botões com cores coordenadas e efeito hover.
+6. Seções de Página Específicas
+#femininos, #masculinos, #jogos {
+    background-color: #ffd1dc; /* Femininos */
+    background-color: #b3cde0; /* Masculinos */
+    background-color: #c8f1e1; /* Jogos */
+}
